@@ -1,0 +1,187 @@
+:root {
+  --bg: #0b0c10;
+  --bg-gradient: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
+  --card: #1f2833;
+  --nav-card: #0b0c10;
+  --accent: #45a29e;
+  --headline: #66fcf1;
+  --text: #c5c6c7;
+  --muted: #9aa1a8;
+  --radius: 14px;
+  --glass-border: rgba(255,255,255,0.12);
+  --glass: rgba(255,255,255,0.06);
+}
+
+/* =====================
+   GLOBAL
+===================== */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text);
+  padding: 20px;
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =====================
+   HEADER
+===================== */
+.site-header {
+  margin-bottom: 18px;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.mark {
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  color: #0b0c10;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--headline);
+}
+
+h2 {
+  color: var(--headline);
+  font-size: 17px;
+}
+
+h3 {
+  color: var(--accent);
+  font-size: 15px;
+}
+
+/* =====================
+   CARD / CONTENT BOXES
+===================== */
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+}
+
+/* =====================
+   LEFT SIDEBAR NAVIGATION
+===================== */
+.apts-layout {
+  display: grid;
+  grid-template-columns: 260px auto;
+  align-items: start;
+  gap: 14px; /* Reduced gap */
+}
+
+.left-nav {
+  background: var(--nav-card);
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+  height: 70vh;                  /* Increase length */
+  position: sticky;
+  top: 10px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.25);
+}
+
+.left-nav a {
+  display: block;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.left-nav a:hover {
+  background: var(--accent);
+  color: #0b0c10;
+  transform: translateX(3px);
+}
+
+/* =====================
+   TYPOGRAPHY STYLES
+===================== */
+.lead {
+  font-size: 14px;
+  color: var(--text);
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =====================
+   CODE BLOCKS
+===================== */
+pre {
+  background: #0b0c10;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--glass-border);
+  font-size: 12px;
+}
+
+code {
+  color: var(--accent);
+}
+
+/* =====================
+   FOOTER FIXED AT BOTTOM
+===================== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0b0c10;
+  border-top: 1px solid var(--glass-border);
+  padding: 10px 20px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media(max-width: 900px) {
+  .apts-layout {
+    grid-template-columns: 1fr;
+  }
+  .left-nav {
+    height: auto;
+    position: relative;
+    width: 100%;
+  }
+}
